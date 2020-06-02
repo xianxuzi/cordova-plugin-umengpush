@@ -204,33 +204,4 @@
         <source-file src="src/android/UMApplication.java" target-dir="src/com/yl/umeng"/>
         <source-file src="src/android/PushActivity.java" target-dir="src/com/yl/umeng"/>
     </platform>
-    <platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="UMengPush">
-                <param name="ios-package" value="UMengPush"/>
-                <param name="onload" value="true" />
-            </feature>
-        </config-file>
-        <!--API_KEY-->
-        <config-file parent="UMengPush" target="*-Info.plist">
-            <dict>
-                <key>UMPUSH_APPKEY</key>
-                <string>$IOS_APPKEY</string>
-            </dict>
-        </config-file>
-        <header-file src="src/ios/UMengPush.h"/>
-        <header-file src="src/ios/AppDelegate+UmengPush.h"/>
-        <source-file src="src/ios/UMengPush.m"/>
-        <source-file src="src/ios/AppDelegate+UmengPush.m"/>
-        <framework src="src/ios/librarys/SecurityEnvSDK.framework" custom="true"/>
-        <framework src="src/ios/librarys/UMCommon.framework" custom="true"/>
-        <framework src="src/ios/librarys/UMCommonLog.framework" custom="true"/>
-        <framework src="src/ios/librarys/UMPush.framework" custom="true"/>
-        <framework src="src/ios/librarys/UTDID.framework" custom="true"/>
-        <resource-file src="src/ios/librarys/UMCommonLog.bundle"/>
-        <framework src="CoreTelephony.framework" />
-        <framework src="UserNotifications.framework" />
-        <framework src="libz.tbd" />
-        <framework src="libsqlite3.tbd" />
-    </platform>
 </plugin>
